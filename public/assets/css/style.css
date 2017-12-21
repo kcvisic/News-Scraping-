@@ -1,0 +1,12 @@
+
+#scrapeBtn {
+  float: right;
+}
+
+#commentBox{
+  padding-top: 10px
+}
+#allComments{
+  
+  overflow: scroll;
+}

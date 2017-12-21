@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Echo JS Scraper</a>
+    <a class="btn btn-primary navbar-btn scrape-new" id="scrapeBtn">Scrape the News</a>
+  </div>
+</nav>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <div class="panel-heading" style="background-color:brown;"><strong> Open for disscusion?</strong></div>
+
+        <ul class="list-group">
+          {{#each articles}}
+            <div class="row" id="articleBlock">
+              <li class="list-group-item">
+                <span ><strong> {{this.title}}</strong><br /><a href="{{this.link}}">{{this.link}}</a></a></span>
+
+                </br/>
+                  <form class="create-form">
+                  <div class="input-group" id="commentBox">
+                    <input type="text" class="form-control" id="{{this._id}}" placeholder="Add a comment...">
+                    <span class="input-group-btn">
+                      <button onclick="handleCommentSubmit('{{this._id}}')" class="btn btn-danger" type="submit">Add</button>
+                    </span>
+                  </div>
+                </form>
+                </br/>
+              <div class="well well-lg" id="allComments">
+                <ul>
+                  {{#each this.notes as | note index|}}
+                    <li>{{index}}-{{note.body}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+
+              </li>
+
+            </div>
+
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
