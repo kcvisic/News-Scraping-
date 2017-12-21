@@ -25,7 +25,7 @@ if(process.env.MONGODB_URI){
 }
 else{
   mongoose.connect("mongodb://localhost/News_Scraper", {
-  useMongoClient: true;
+  useMongoClient: true
   });
 }
 
